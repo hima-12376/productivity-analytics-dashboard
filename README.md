@@ -2,19 +2,24 @@
 
 ## Overview
 
-Productivity Analytics Dashboard is a desktop analytics application that monitors active application usage, stores activity sessions in SQLite, performs usage analytics using Pandas, and visualizes productivity metrics through a Flask-based interactive dashboard.
+Productivity Analytics Dashboard is a desktop activity analytics application that automatically monitors active application usage, stores activity sessions in SQLite, performs usage analysis using Pandas, and visualizes productivity metrics through a Flask-based interactive dashboard.
+
+The platform continuously tracks desktop activity in the background, categorizes applications into predefined groups, and provides interactive visualizations that help users understand their productivity patterns over time.
+
+---
 
 ## Features
 
+- Background desktop activity monitoring
 - Tracks active desktop applications in real time
 - Records application sessions with start time, end time, and duration
 - Automatically categorizes applications into predefined categories
-- Displays a live analytics dashboard with automatic refresh
-- Provides daily, weekly, and monthly usage statistics
-- Visualizes hourly and weekday activity patterns
-- Displays top application usage
-- Generates category-wise screen time analytics
-- Exposes analytics through REST APIs
+- Interactive dashboard with automatic data refresh
+- Daily, weekly, and monthly usage analytics
+- Hourly and weekday activity visualization
+- Top application usage statistics
+- Category-wise screen time analysis
+- REST API for accessing analytics data
 - Stores activity history using SQLite
 
 ---
@@ -40,7 +45,7 @@ Productivity Analytics Dashboard is a desktop analytics application that monitor
 ## Project Structure
 
 ```text
-tracker/
+productivity-analytics-dashboard/
 │
 ├── analytics/
 │   └── statistics.py
@@ -63,28 +68,34 @@ tracker/
 │   ├── style.css
 │   └── dashboard.js
 │
+├── screenshots/
+│   ├── dashboard.png
+│   └── insights.png
+│
 ├── app.py
 ├── main.py
 ├── requirements.txt
-└── README.md
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-## Dashboard
+## Dashboard Analytics
 
-The dashboard provides the following analytics:
+The dashboard provides comprehensive productivity insights, including:
 
 - Today's screen time
-- Total screen time
-- Total sessions
+- Total tracked screen time
+- Total activity sessions
 - Application switches
-- Longest session
-- Top applications
-- Daily activity chart
-- Hourly activity chart
-- Weekday activity chart
-- Category-wise usage chart
+- Longest application session
+- Top application usage
+- Daily activity trends
+- Hourly activity distribution
+- Weekday productivity analysis
+- Category-wise screen time distribution
 
 The dashboard automatically refreshes to display the latest activity statistics.
 
@@ -96,9 +107,9 @@ The dashboard automatically refreshes to display the latest activity statistics.
 |----------|-------------|
 | `/api/dashboard` | Dashboard summary statistics |
 | `/api/top-applications` | Top application usage |
-| `/api/daily` | Daily screen time |
-| `/api/hourly` | Hourly activity |
-| `/api/weekday` | Weekday activity |
+| `/api/daily` | Daily screen time statistics |
+| `/api/hourly` | Hourly activity distribution |
+| `/api/weekday` | Weekday activity statistics |
 | `/api/categories` | Category-wise usage |
 | `/api/category-percentage` | Category percentage breakdown |
 
@@ -106,37 +117,37 @@ The dashboard automatically refreshes to display the latest activity statistics.
 
 ## Installation
 
-Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/hima-12376/productivity-analytics-dashboard.git
 ```
 
-Navigate to the project directory
+Navigate to the project directory:
 
 ```bash
 cd productivity-analytics-dashboard
 ```
 
-Install the required dependencies
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Start the activity tracker
+Start the background activity tracker:
 
 ```bash
 python main.py
 ```
 
-Open another terminal and start the dashboard
+Open a new terminal and launch the analytics dashboard:
 
 ```bash
 python app.py
 ```
 
-Open your browser and visit
+Open your browser and visit:
 
 ```
 http://127.0.0.1:5000
@@ -146,28 +157,43 @@ http://127.0.0.1:5000
 
 ## Screenshots
 
-Include screenshots of:
+### Dashboard
 
-- Dashboard overview
-- Analytics charts
-- Category breakdown
-- Top applications
+The main dashboard provides a comprehensive overview of application usage, screen time statistics, productivity trends, and category-wise analytics.
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### Productivity Insights
+
+The insights page presents detailed analytics, including application rankings, usage trends, and category-wise statistics to help users better understand their productivity patterns.
+
+![Insights](screenshots/insights.png)
 
 ---
 
 ## Future Improvements
 
-- AI-generated productivity insights
-- Export reports (PDF/CSV)
+- AI-generated productivity summaries
+- Export analytics reports as PDF or CSV
 - System tray integration
-- Auto-start with Windows
+- Automatic startup on system boot
 - User-defined application categories
-- Productivity scoring
+- Productivity scoring and recommendations
+- Multi-device activity synchronization
+- Interactive filtering and search
+
+---
+
+## License
+
+This project is licensed under the MIT License.
 
 ---
 
 ## Author
 
-Hima Paul
+**Hima Paul**
 
 GitHub: https://github.com/hima-12376
