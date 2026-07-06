@@ -1,0 +1,308 @@
+
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#0f172a;
+
+    color:#f8fafc;
+
+    font-family:"Segoe UI",Arial,sans-serif;
+
+    line-height:1.6;
+}
+
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:95%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:40px 0;
+}
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+header h1{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+    color:#ffffff;
+}
+
+header p{
+
+    color:#94a3b8;
+
+    font-size:18px;
+}
+
+
+/* ===========================
+   KPI CARDS
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+}
+
+.card{
+
+    background:#1e293b;
+
+    border-radius:16px;
+
+    padding:28px;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+}
+
+.card h3{
+
+    color:#94a3b8;
+
+    margin-bottom:15px;
+
+    font-size:16px;
+
+    font-weight:500;
+}
+
+.card h2{
+
+    font-size:34px;
+
+    color:#38bdf8;
+}
+
+
+/* ===========================
+   PANELS
+=========================== */
+
+.panel{
+
+    background:#1e293b;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.panel h2{
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+}
+
+
+/* ===========================
+   LONGEST SESSION
+=========================== */
+
+.info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.info strong{
+
+    color:#38bdf8;
+
+    display:block;
+
+    margin-bottom:8px;
+}
+
+.info p{
+
+    color:#e2e8f0;
+}
+
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+
+    background:#334155;
+}
+
+th{
+
+    padding:15px;
+
+    text-align:left;
+
+    color:#ffffff;
+}
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid #334155;
+}
+
+tbody tr{
+
+    transition:.25s;
+}
+
+tbody tr:hover{
+
+    background:#334155;
+}
+
+
+/* ===========================
+   CHARTS
+=========================== */
+
+.charts{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
+
+    gap:25px;
+}
+
+canvas{
+
+    width:100% !important;
+
+    height:320px !important;
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#94a3b8;
+
+    font-size:15px;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+    .charts{
+
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+    }
+
+    .info{
+
+        flex-direction:column;
+    }
+
+    header h1{
+
+        font-size:34px;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .container{
+
+        width:96%;
+    }
+
+    .panel{
+
+        padding:18px;
+    }
+
+    .card{
+
+        padding:20px;
+    }
+
+    canvas{
+
+        height:260px !important;
+    }
+
+}
+

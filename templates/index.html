@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Activity Analytics Platform</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>📊 Activity Analytics Platform</h1>
+
+        <p>
+            Desktop Productivity & Usage Analytics
+        </p>
+
+    </header>
+
+    <!-- KPI CARDS -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <h3>Today's Screen Time</h3>
+
+            <h2 id="todayScreenTime">
+                {{ data.today_screen_time }} sec
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Screen Time</h3>
+
+            <h2 id="totalScreenTime">
+                {{ data.total_screen_time }} sec
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Sessions</h3>
+
+            <h2 id="totalSessions">
+                {{ data.total_sessions }}
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Application Switches</h3>
+
+            <h2 id="applicationSwitches">
+                {{ data.application_switches }}
+            </h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- LONGEST SESSION -->
+
+    <section class="panel">
+
+        <h2>🏆 Longest Session</h2>
+
+        <div class="info">
+
+            <div>
+
+                <strong>Application</strong>
+
+                <p id="longestApplication">
+
+                    {{ data.longest_session.application }}
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <strong>Duration</strong>
+
+                <p id="longestDuration">
+
+                    {{ data.longest_session.duration }} sec
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOP APPLICATIONS -->
+
+    <section class="panel">
+
+        <h2>Top Applications</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Application</th>
+
+                    <th>Duration (sec)</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for app, duration in data.top_applications.items() %}
+
+                <tr>
+
+                    <td>{{ app }}</td>
+
+                    <td>{{ duration }}</td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- CHARTS -->
+
+    <section class="charts">
+
+        <div class="panel">
+
+            <h2>📈 Daily Activity</h2>
+
+            <canvas id="dailyChart"></canvas>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>🕒 Hourly Activity</h2>
+
+            <canvas id="hourlyChart"></canvas>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>📅 Weekday Usage</h2>
+
+            <canvas id="weekdayChart"></canvas>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>📊 Category Breakdown</h2>
+
+            <canvas id="categoryChart"></canvas>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        Activity Analytics Platform © 2026
+
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+
+</body>
+
+</html>
